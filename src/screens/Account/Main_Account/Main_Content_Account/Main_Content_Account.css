@@ -1,0 +1,23 @@
+.Main_Content_Account_container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    padding: 7px 20px;
+    margin: 20px 0;
+}
+.Main_Content_Account_Transaction_Number, .Main_Content_Account_Date_And_Time{
+    color: white;
+    font-size: 15px;
+}
+.Main_Content_Account_Details_Btn{
+    padding: 5px 20px;
+    border-radius: 20px;
+}
+.Main_Content_Account_Details_Text{
+    color: black;
+    font-weight: bold;
+    font-size: 13px;
+}

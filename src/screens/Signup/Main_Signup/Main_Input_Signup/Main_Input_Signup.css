@@ -1,0 +1,36 @@
+.Main_Input_Signup_Box{
+    display: flex;
+    flex-direction: column; 
+}
+.Main_Input_Signup_Email_Box, .Main_Input_Signup_Password_Box {
+    margin: 5px 0; 
+}
+.Main_Input_Signup_Email_Input, .Main_Input_Signup_Password_Input {
+    width: 250px;
+    height: 20px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 1px solid #ccc;
+    padding: 5px;
+    font-size: 16px;
+    border-width: 0;
+    border-radius: 10px;
+    font-size: 12px;
+}
+.Main_Input_Signup_Email_Text, .Main_Input_Signup_Password_Text {
+    margin-bottom: 5px; 
+    color: white;
+    font-weight: bold;
+}
+.Main_Input_Signup_Sign_In_Btn{
+    color: black;
+    background-color: white;
+    border-radius: 20px;
+    width: 100%;
+    padding: 10px 5px;
+    margin-top: 15px;
+}
+.Main_Input_Signup_Sign_In_Btn_Text{
+    font-size: 14px;
+    font-weight: bold;
+}
