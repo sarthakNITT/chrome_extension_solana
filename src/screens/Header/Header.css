@@ -71,3 +71,24 @@ body{
   justify-content: center;
   position: relative;
 }
+/* Add styles for the dropdown menu */
+.dropdown-menu {
+  position: absolute;
+  top: 60px; /* Adjust based on your layout */
+  right: 20px;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  z-index: 1000;
+}
+
+.dropdown-item {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.dropdown-item:hover {
+  background-color: #f0f0f0;
+}

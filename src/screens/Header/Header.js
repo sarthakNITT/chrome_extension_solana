@@ -2,37 +2,41 @@ import React, { useEffect, useState } from "react";
 import './Header.css';
 import img from '../../images/user.png';
 import { Link, useNavigate } from "react-router-dom";
-import { auth } from "../../firebaseConfig"; 
-import { onAuthStateChanged, signOut } from "firebase/auth"; 
+import { auth } from "../../firebaseConfig";
+import { onAuthStateChanged, signOut } from "firebase/auth";
 
 const Header_Home = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const navigate = useNavigate(); 
+  const [showDropdown, setShowDropdown] = useState(false); // state to control the dropdown visibility
+  const navigate = useNavigate();
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
-        setIsLoggedIn(true); 
+        setIsLoggedIn(true);
       } else {
-        setIsLoggedIn(false); 
+        setIsLoggedIn(false);
       }
     });
 
-    return () => unsubscribe(); 
+    return () => unsubscribe();
   }, []);
 
-  const handleUserIconClick = async () => {
+  // Toggle the dropdown menu when user icon is clicked
+  const handleUserIconClick = () => {
     if (isLoggedIn) {
-      try {
-        await signOut(auth); 
-        alert("Signed out successfully!"); 
-        navigate("/login"); 
-      } catch (error) {
-        console.error("Error signing out: ", error);
-      }
+      setShowDropdown(!showDropdown); // Toggle dropdown if logged in
     } else {
-      navigate("/login"); 
+      navigate("/login"); // Redirect to login if not logged in
     }
+  };
+
+  // Handle user logout
+  const handleLogout = async () => {
+    await signOut(auth); // Sign out the user from Firebase
+    setIsLoggedIn(false); // Update the state
+    setShowDropdown(false); // Close dropdown after logging out
+    navigate("/login"); // Redirect to login page after logout
   };
 
   return (
@@ -45,12 +49,19 @@ const Header_Home = () => {
         <a href="#" className="Header_Home_Box_Contact_Us_Btn">Contact Us</a>
       </span>
       <span className="Header_Home_Box_Home_Section_Box">
-        {isLoggedIn && ( 
+        {isLoggedIn && (
           <Link to="/account" className="Header_Home_Box_Home_Section_Box_Home_Btn">Account</Link>
         )}
         <span className="Header_Home_Box_Home_Section_Box_Profile_Btn" onClick={handleUserIconClick}>
           <img src={img} className="Header_Home_Box_Home_Section_Box_Image_Icon" alt="Profile" />
         </span>
+
+        {/* Conditional rendering of dropdown menu */}
+        {isLoggedIn && showDropdown && (
+          <div className="dropdown-menu">
+            <span className="dropdown-item" onClick={handleLogout}>Logout</span>
+          </div>
+        )}
       </span>
     </div>
   );
