@@ -29,16 +29,27 @@
 .Main_Social_Signup_GBtn .icon {
     color: #DB4437; 
     font-size: 24px;
+    transition: all 0.3s ease;
 }
 
 .Main_Social_Signup_ABtn .icon {
     color: #000000; 
     font-size: 35px;
+    transition: all 0.3s ease;
 }
 
 .Main_Social_Signup_FBtn .icon {
     color: #4267B2; 
     font-size: 24px;
+    transition: all 0.3s ease;
+}
+.Main_Social_Signup_GBtn .icon:hover, .Main_Social_Signup_FBtn .icon:hover{
+    font-size: 35px;
+    position: relative;
+}
+.Main_Social_Signup_ABtn .icon:hover{
+    font-size: 45px;
+    position: relative;
 }
 .Main_Social_Signup_Register_Text{
     font-size: 11px;
@@ -59,8 +70,19 @@
     margin-top: 7px;
 }
 
-.Main_Social_Signup_Register_Btn_Text {
+.Main_Social_Signup_Register_Btn_Text{
+    color: white;
+    text-decoration: none;
+    border: 1px solid white; 
+    border-radius: 20px;     
+    padding: 5px 10px;       
+    transition: all 0.3s ease;
+    margin-top: 15px;
+}
+
+.Main_Social_Signup_Register_Btn_Text:hover {
     font-weight: bold;
     font-size: 11px;
     color: black;
+    background-color: white;
 }

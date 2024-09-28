@@ -23,20 +23,48 @@
     color: white;
     font-weight: bold;
 }
-.Main_Input_Login_Box_Forgot_Btn{
-    color: white;
-    text-align: right;
-    margin-bottom: 15px;
-    margin-right: 5px;
-}  
 .Main_Input_Login_Box_Sign_In_Btn{
-    color: black;
-    background-color: white;
-    border-radius: 20px;
+    background-color: transparent;
     width: 100%;
     padding: 10px 5px;
-}
-.Main_Input_Login_Box_Sign_In_Btn_Text{
     font-size: 14px;
     font-weight: bold;
+    color: white;
+    text-decoration: none;
+    border: 1px solid white; 
+    border-radius: 20px;     
+    transition: all 0.3s ease;
 }
+.Main_Input_Login_Box_Sign_In_Btn:hover{
+    color: black;
+    background-color: white;
+    cursor: pointer;
+}
+.Main_Input_Login_Box_Forgot_Btn{
+    align-self: flex-end;
+    color: white;
+    margin-bottom: 10px;
+    cursor: pointer;
+    background-color: transparent;
+    text-decoration: none;
+    border: 0; 
+    transition: all 0.3s ease;
+}
+.Main_Input_Login_Box_Password_Input_Container {
+    position: relative;
+    width: 100%;
+  }
+  
+  .Main_Input_Login_Box_Password_Input {
+    width: 100%;
+  }
+  
+  .password-toggle-icon {
+    position: absolute;
+    top: 50%;
+    right: 1px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 18px;
+  }
+  

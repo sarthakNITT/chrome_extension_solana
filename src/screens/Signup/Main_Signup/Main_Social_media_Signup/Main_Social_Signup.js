@@ -2,6 +2,7 @@ import React from "react";
 import './Main_Social_Signup.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGoogle, faApple, faFacebook } from '@fortawesome/free-brands-svg-icons';
+import { Link } from "react-router-dom";
 
 const Main_Social_Signup = () => {
     return (
@@ -18,10 +19,8 @@ const Main_Social_Signup = () => {
                     <FontAwesomeIcon icon={faFacebook} size="2x" className="icon" />
                 </button>
             </div>
-                <text className="Main_Social_Signup_Register_Text">Don't have an account?</text>
-                <button className="Main_Social_Signup_Register_Btn">
-                    <span className="Main_Social_Signup_Register_Btn_Text">Register now</span>
-                </button>
+                <text className="Main_Social_Signup_Register_Text">Already have an account?</text>
+                <Link to="/login" className="Main_Social_Signup_Register_Btn_Text">Sign In now</Link>
         </div>
     );
 };

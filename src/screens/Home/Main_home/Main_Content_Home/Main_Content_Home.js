@@ -4,36 +4,55 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretDown } from "@fortawesome/free-solid-svg-icons"; 
 
 const Main_Content_Home = () => {
-  const [selectedOption, setSelectedOption] = useState("USD"); 
-  const [showDropdown, setShowDropdown] = useState(false);
+  const [convertSelectedOption, setConvertSelectedOption] = useState("USD"); 
+  const [enterSelectedOption, setEnterSelectedOption] = useState("USD"); 
+  const [showDropdownConvert, setShowDropdownConvert] = useState(false);
+  const [showDropdownEnter, setShowDropdownEnter] = useState(false);
 
-  const handleOptionSelect = (option) => {
-    setSelectedOption(option);  
-    setShowDropdown(false);     
+  const handleOptionSelectConvert = (option) => {
+    setConvertSelectedOption(option);  
+    setShowDropdownConvert(false);     
+  };
+
+  const handleOptionSelectEnter = (option) => {
+    setEnterSelectedOption(option)  
+    setShowDropdownEnter(false)
   };
 
   return (
     <div className="Main_Content_Home">
       <span className="Main_Content_Home_Amt_Enter_Box">
         <span className="Main_Content_Home_Amt_Enter_Text">Enter Your Amount:</span>
-        <input className="Main_Content_Home_Amt_Enter_Input" />
+        <input type="number" className="Main_Content_Home_Amt_Enter_Input" />
+        <div className="Main_Content_Home_Enter_Box_Drop_Down_Container">
+          <button className="Main_Content_Home_Enter_Box_Drop_Down_Btn" onClick={() => setShowDropdownEnter(!showDropdownEnter)}>
+            {enterSelectedOption} <FontAwesomeIcon icon={faCaretDown} />
+          </button>
+          {showDropdownEnter && (
+            <ul className="Main_Content_Home_Enter_Box_Drop_Down_Menu">
+              <li onClick={() => handleOptionSelectEnter("Rs")}>Rs</li>
+              <li onClick={() => handleOptionSelectEnter("USD")}>USD</li>
+              <li onClick={() => handleOptionSelectEnter("Euro")}>Euro</li>
+            </ul>
+          )}
+        </div>
       </span>
       <span className="Main_Content_Home_Convert_Box">
         <span className="Main_Content_Home_Convert_Box_Text">Convert into</span>
         <div className="Main_Content_Home_Convert_Box_Drop_Down_Container">
-          <button className="Main_Content_Home_Convert_Box_Drop_Down_Btn" onClick={() => setShowDropdown(!showDropdown)}>
-            {selectedOption} <FontAwesomeIcon icon={faCaretDown} />
+          <button className="Main_Content_Home_Convert_Box_Drop_Down_Btn" onClick={() => setShowDropdownConvert(!showDropdownConvert)}>
+            {convertSelectedOption} <FontAwesomeIcon icon={faCaretDown} />
           </button>
-          {showDropdown && (
+          {showDropdownConvert && (
             <ul className="Main_Content_Home_Convert_Box_Drop_Down_Menu">
-              <li onClick={() => handleOptionSelect("USD")}>USD</li>
-              <li onClick={() => handleOptionSelect("Euro")}>Euro</li>
-              <li onClick={() => handleOptionSelect("Bitcoin")}>Bitcoin</li>
-              <li onClick={() => handleOptionSelect("Ethereum")}>Ethereum</li>
+              <li onClick={() => handleOptionSelectConvert("USD")}>USD</li>
+              <li onClick={() => handleOptionSelectConvert("Euro")}>Euro</li>
+              <li onClick={() => handleOptionSelectConvert("Bitcoin")}>Bitcoin</li>
+              <li onClick={() => handleOptionSelectConvert("Ethereum")}>Ethereum</li>
             </ul>
           )}
         </div>
-        <input className="Main_Content_Home_Convert_Box_Convert_Drop_Down" />
+        <input type="number" className="Main_Content_Home_Convert_Box_Convert_Drop_Down" />
       </span>
       <button className="Main_Content_Home_Proceed_Btn">Proceed for transaction</button>
     </div>

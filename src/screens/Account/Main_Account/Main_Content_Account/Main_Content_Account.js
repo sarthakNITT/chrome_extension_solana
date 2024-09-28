@@ -7,17 +7,17 @@ const Main_Content_Account=()=>{
             <div className="Main_Content_Account_container">
                 <span className="Main_Content_Account_Transaction_Number">0.00000019 BTC</span>
                 <span className="Main_Content_Account_Date_And_Time">25/09/2025 : 11:56</span>
-                <button className="Main_Content_Account_Details_Btn"><text className="Main_Content_Account_Details_Text">Details</text></button>
+                <button className="Main_Content_Account_Details_Btn">Details</button>
             </div>
             <div className="Main_Content_Account_container">
                 <span className="Main_Content_Account_Transaction_Number">0.00000019 BTC</span>
                 <span className="Main_Content_Account_Date_And_Time">25/09/2025 : 11:56</span>
-                <button className="Main_Content_Account_Details_Btn"><text className="Main_Content_Account_Details_Text">Details</text></button>
+                <button className="Main_Content_Account_Details_Btn">Details</button>
             </div>
             <div className="Main_Content_Account_container">
                 <span className="Main_Content_Account_Transaction_Number">0.00000019 BTC</span>
                 <span className="Main_Content_Account_Date_And_Time">25/09/2025 : 11:56</span>
-                <button className="Main_Content_Account_Details_Btn"><text className="Main_Content_Account_Details_Text">Details</text></button>
+                <button className="Main_Content_Account_Details_Btn">Details</button>
             </div>
         </div>
     )

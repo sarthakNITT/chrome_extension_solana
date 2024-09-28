@@ -1,3 +1,7 @@
+.Main_Content_Account_scrollable_container{
+    max-height: 300px; 
+    overflow-y: auto; 
+}
 .Main_Content_Account_container{
     display: flex;
     flex-direction: row;
@@ -13,11 +17,20 @@
     font-size: 15px;
 }
 .Main_Content_Account_Details_Btn{
-    padding: 5px 20px;
-    border-radius: 20px;
+    color: white;
+    text-decoration: none;
+    border: 1px solid white; 
+    border-radius: 20px;       
+    transition: all 0.3s ease;
+    padding: 5px 22px;
+    background-color: transparent;
+    align-items: center;
 }
-.Main_Content_Account_Details_Text{
-    color: black;
+    
+.Main_Content_Account_Details_Btn:hover {
     font-weight: bold;
-    font-size: 13px;
+    color: black;
+    background-color: white;
+    position: static;
+    cursor: pointer;
 }

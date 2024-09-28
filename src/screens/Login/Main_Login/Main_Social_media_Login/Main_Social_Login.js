@@ -2,6 +2,8 @@ import React from "react";
 import './Main_Social_Login.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGoogle, faApple, faFacebook } from '@fortawesome/free-brands-svg-icons';
+import { Link } from "react-router-dom";
+import Main_Signup_File from '../../../Main_Screen_Files/Main_Signup_File'
 
 const Main_Social_Login = () => {
     return (
@@ -19,9 +21,7 @@ const Main_Social_Login = () => {
                 </button>
             </div>
                 <text className="Main_Social_Login_Register_Text">Don't have an account?</text>
-                <button className="Main_Social_Login_Register_Btn">
-                    <span className="Main_Social_Login_Register_Btn_Text">Register now</span>
-                </button>
+                <Link to="/signup" className="Main_Social_Login_Register_Btn_Text">Register now</Link>
         </div>
     );
 };
